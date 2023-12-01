@@ -2,26 +2,16 @@ package viergewinnt1;
 
 import java.util.Scanner;
 
-public class Spieler {
+public abstract class Spieler {
     private final String nickname;
     private final String spielsteinfarbe;
     private int anzahlSpielzuege;
 
-    public Spieler(String bezeichnung,  String spielsteinfarbe) {
-        System.out.println("Erfassung von "+ bezeichnung + " (Spielsteinfarbe " + spielsteinfarbe + ")");
-        this.nickname = spielerDetailsErfassen("Nickname");
+    public Spieler(String nickname,  String spielsteinfarbe) {
+        this.nickname = nickname;
         this.spielsteinfarbe = spielsteinfarbe;
         this.anzahlSpielzuege = 0;
-    }
-    private String spielerDetailsErfassen(String detail) {
-        Scanner eingabe = new Scanner(System.in);
-        System.out.print(detail + ": ");
-        return eingabe.next();
-    }
-    public int spielen(){
-        Scanner eingabe = new Scanner(System.in);
-        System.out.print(getName() + " (" + getSpielsteinfarbe() + ") ist am Zug. Welche Spalte? ");
-        return eingabe.nextInt();
+        System.out.println("Spieler "+ nickname + " (Spielsteinfarbe " + spielsteinfarbe + ") erfasst.");
     }
     public String getName() {
         return nickname;
@@ -37,4 +27,5 @@ public class Spieler {
     public String toString() {
         return (getName() + ", Steinfarbe " + getSpielsteinfarbe() + ", Anzahl Züge: " + anzahlSpielzuege);
     }
+    public abstract int spielen();
 }

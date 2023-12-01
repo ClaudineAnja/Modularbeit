@@ -15,8 +15,9 @@ public class Spiel {
 
     public Spiel() {
         this.spielfeld = new Spielfeld(ANZSPALTEN,ANZZEILEN,GEWINNZAHL);
-        this.spieler1 = new Spieler("Spieler 1","Rot");
-        this.spieler2 = new Spieler("Spieler 2","Blau");
+        this.spieler1 = new SpielerPerson("Sepp","Rot");
+        //this.spieler2 = new SpielerPerson("Hans","Blau");
+        this.spieler2 = new SpielerKI("Apple","Blau");
         System.out.println("\nEs spielen " + spieler1.getName() + " (" + spieler1.getSpielsteinfarbe() + ") gegen " + spieler2.getName() + " (" + spieler2.getSpielsteinfarbe() + ").");
     }
     public static void main(String[] args) {
@@ -42,4 +43,5 @@ public class Spiel {
         }
         System.out.println("********** UNENTSCHIEDEN ****************");
     }
+
 }
