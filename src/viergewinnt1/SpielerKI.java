@@ -7,7 +7,7 @@ public class SpielerKI extends Spieler {
         super(nickname, spielsteinfarbe);
     }
     public int spielen() {
-        int spalte = (int)(Math.random() * 7)+1;
+        int spalte = (int)(Math.random() * Spiel.getAnzspalten())+1;
         System.out.println("\n" + getName() + " ist am Zug -> Spalte " + spalte);
         return spalte;
     }
