@@ -24,7 +24,9 @@ public class Spiel {
         Spiel spiel = new Spiel();
         spiel.spielen();
     }
-
+public static int getAnzspalten(){
+        return ANZSPALTEN;
+    }
     public void spielen() {
         Spieler aktuellerSpieler = spieler1;
         int spalte;
